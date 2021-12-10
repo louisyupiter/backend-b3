@@ -1,4 +1,4 @@
-// const path = require('path');
+const path = require('path');
 const express = require("express");
 const mongooseConnect = require("./configs/db");
 const errorHandler = require("./middlewares/errorHandler");
@@ -11,7 +11,7 @@ mongooseConnect();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-// app.use('/images', express.static(path.join('images')));
+app.use('/images', express.static(path.join('images')));
 
 app.use("/api/posts", postsRoutes);
 
