@@ -15,7 +15,7 @@ mongooseConnect();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/images", express.static(path.join("images")));
-const Post = require("../models/Post");
+const Post = require("./models/Post");
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader(
