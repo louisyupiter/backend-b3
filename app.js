@@ -4,7 +4,6 @@ const mongooseConnect = require("./configs/db");
 const errorHandler = require("./middlewares/errorHandler");
 const app = express();
 const cors = require("cors");
-// const port = 3000;
 
 const postsRoutes = require("./routes/posts");
 
@@ -23,7 +22,4 @@ app.use("/api/posts", postsRoutes);
 
 app.use(errorHandler);
 
-// app.listen(port, () => {
-//   console.log(`Example app listening at http://localhost:${port}`);
-// });
 module.exports = app;
