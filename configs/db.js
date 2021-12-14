@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-async function main() {
+main = async () => {
   const dburl = `mongodb://localhost/multertest`;
   try {
     await mongoose.connect(dburl);
