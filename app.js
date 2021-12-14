@@ -5,7 +5,7 @@ const errorHandler = require("./middlewares/errorHandler");
 const app = express();
 // const port = 3000;
 
-// const http = require('http');
+const http = require('http');
 const port = process.env.PORT || 3000
 
 
