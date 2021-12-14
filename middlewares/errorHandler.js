@@ -4,6 +4,10 @@ const errorHandler = (err, req, res, next) => {
     let message = "";
   
     switch (name) {
+      case "NOT_VALID":
+        code = 404;
+        message = "data_not_valid";
+        break;
       case "NOT_FOUND":
         code = 404;
         message = "data_not_found";
