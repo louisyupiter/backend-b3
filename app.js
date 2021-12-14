@@ -17,14 +17,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/images', express.static(path.join('images')));
 
+app.use("/api/posts", postsRoutes);
+
+app.use(errorHandler);
+
 app.get('/', (req,res)=>{
   res.setHeader('Content-Type', 'text/html');
   res.end('<h1>Hello World</h1>')
 })
-
-app.use("/api/posts", postsRoutes);
-
-app.use(errorHandler);
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
