@@ -1,11 +1,12 @@
 const mongoose = require("mongoose");
 
-main = () => {
+main = async () => {
   const dburl = `mongodb://localhost/multertest`;
   try {
-    mongoose.connect(dburl);
+    await mongoose.connect(dburl);
     console.log(`Mongoose Connected!`);
   } catch (error) {
+    console.log(`Mongoose FAILED!`);
     console.error.bind(console, "Connection Error:");
   }
 };
