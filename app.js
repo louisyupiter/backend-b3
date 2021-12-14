@@ -30,6 +30,18 @@ app.use((req, res, next) => {
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
+app.get("/api", async (req, res, next) => {
+  try {
+    const result = await Post.find({});
+    if (result.length === 0) {
+      throw { name: "NOT_FOUND" };
+    } else {
+      res.status(200).json({ message: "success", result: result });
+    }
+  } catch (error) {
+    next(error);
+  }
+});
 app.use("/api/posts", postsRoutes);
 
 app.use(errorHandler);
