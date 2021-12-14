@@ -21,20 +21,16 @@ app.use("/api/posts", postsRoutes);
 
 app.use(errorHandler);
 
-// app.get('/', (req,res)=>{
-//   res.setHeader('Content-Type', 'text/html');
-//   res.end('<h1>Hello World</h1>')
-// })
+app.get('/', (req,res)=>{
+  res.setHeader('Content-Type', 'text/html');
+  res.end('<h1>Hello World</h1>')
+})
 
 // app.listen(port, () => {
 //   console.log(`Example app listening at http://localhost:${port}`);
 // });
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/html');
-  res.end('<h1>Hello World</h1>');
-});
+const server = http.createServer(app);
 
 server.listen(port,() => {
   console.log(`Server running at port `+port);
